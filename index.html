@@ -43,8 +43,8 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-
 #sprogress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold-d),var(--gold),var(--gold-l));z-index:1000;transform-origin:left;transform:scaleX(0);width:100%}
 
 /* ── NAV ──────────────────────────────────────────*/
-nav{position:fixed;top:0;width:100%;z-index:500;padding:22px 60px;display:flex;align-items:center;justify-content:space-between;transition:all .6s var(--ease)}
-nav.scrolled{background:rgba(7,7,9,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--gborder);padding:14px 60px}
+nav{position:fixed;top:0;width:100%;z-index:602;padding:22px 60px;display:flex;align-items:center;justify-content:space-between;transition:all .6s var(--ease)}
+nav.scrolled{background:rgba(7,7,9,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--gborder);padding:14px 60px;z-index:602}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;z-index:601}
 .logo-icon{width:24px;height:21px;flex-shrink:0;stroke:var(--gold);fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
 .logo-text-wrap{display:flex;flex-direction:column;gap:1px}
@@ -92,10 +92,10 @@ nav.scrolled{background:rgba(7,7,9,.92);backdrop-filter:blur(20px);-webkit-backd
 .hero-title .line{display:block;overflow:hidden}
 .hero-title .word{display:inline-block;transform:translateY(110%);opacity:0}
 .hero-title .acc{color:var(--gold);font-style:italic}
-.hero-sub{font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;opacity:0}
+.hero-sub{font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:rgba(245,240,232,.82);margin-bottom:16px;opacity:0;text-shadow:0 0 24px rgba(201,160,112,.18)}
 .hero-savings{display:inline-flex;align-items:center;gap:12px;background:rgba(201,160,112,.14);border:1px solid rgba(201,160,112,.45);backdrop-filter:blur(12px);padding:11px 24px;margin-bottom:20px;font-size:13px;letter-spacing:.07em;color:var(--gold-l);opacity:0;box-shadow:0 0 40px rgba(201,160,112,.15),inset 0 0 30px rgba(201,160,112,.04)}
 .hero-price{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.4vw,42px);color:var(--gold);letter-spacing:.05em;margin-bottom:32px;opacity:0}
-.hero-price small{font-size:12px;letter-spacing:.2em;color:var(--muted);font-family:'Inter',sans-serif;display:block;margin-bottom:5px}
+.hero-price small{font-size:12px;letter-spacing:.2em;color:rgba(245,240,232,.78);font-family:'Inter',sans-serif;display:block;margin-bottom:5px;text-shadow:0 0 20px rgba(201,160,112,.15)}
 .hero-acts{display:flex;gap:20px;justify-content:center;opacity:0}
 .btn-gold{background:var(--gold);color:var(--bg);border:none;padding:18px 46px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-family:'Inter',sans-serif;font-weight:600;cursor:pointer;transition:all .4s var(--ease);text-decoration:none;display:inline-block}
 .btn-gold:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 20px 40px rgba(201,160,112,.3)}
@@ -140,8 +140,9 @@ nav.scrolled{background:rgba(7,7,9,.92);backdrop-filter:blur(20px);-webkit-backd
 .stat-item.stat-prov .stat-lbl{color:rgba(110,201,122,.7)}
 
 /* ── DESCRIPTION ────────────────────────────────── */
-#description{padding:140px 60px;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
-.desc-content{opacity:0;transform:translateX(-40px)}
+#description{padding:140px 60px;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;grid-template-areas:"top img" "bottom img";column-gap:100px}
+.desc-top{grid-area:top;align-self:end;padding-bottom:24px;opacity:0;transform:translateX(-40px)}
+.desc-bottom{grid-area:bottom;align-self:start;opacity:0;transform:translateY(20px)}
 .sec-label{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;font-weight:500;display:flex;align-items:center;gap:16px}
 .sec-label::before{content:'';width:40px;height:1px;background:var(--gold)}
 .sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,60px);font-weight:300;line-height:1.1;margin-bottom:28px}
@@ -151,10 +152,11 @@ nav.scrolled{background:rgba(7,7,9,.92);backdrop-filter:blur(20px);-webkit-backd
 .feat-item{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted)}
 .feat-item::before{content:'';width:20px;height:1px;background:var(--gold);flex-shrink:0}
 .gold-line{width:60px;height:1px;background:var(--gold);margin:38px 0}
-.desc-img-wrap{position:relative;opacity:0;transform:translateX(40px)}
-.desc-img-wrap img{width:100%;height:600px;object-fit:cover;display:block}
+.desc-img-wrap{grid-area:img;grid-row:1/3;position:relative;opacity:0;transform:translateX(40px)}
+.desc-img-wrap img{width:100%;height:100%;min-height:500px;object-fit:cover;display:block}
 .desc-img-wrap::before{content:'';position:absolute;inset:-20px 20px 20px -20px;border:1px solid var(--gborder);z-index:-1}
 .desc-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,160,112,.08),transparent)}
+.img-accent{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);z-index:1}
 
 /* ── PROPERTY STRIP ─────────────────────────────── */
 #prop-strip{background:var(--bg3);border-top:1px solid var(--gborder);border-bottom:1px solid var(--gborder);padding:0 60px;overflow:hidden}
@@ -333,7 +335,12 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
   .nav-links{display:none}
   .hamburger{display:flex}
   .nav-cta{display:none}
-  #description{grid-template-columns:1fr;gap:50px;padding:80px 28px}
+  #description{display:flex;flex-direction:column;gap:0;padding:70px 28px 80px}
+  .desc-top{padding-bottom:0;transform:none !important;opacity:1 !important;align-self:stretch}
+  .desc-img-wrap{margin:28px 0 36px;transform:none !important;opacity:1 !important}
+  .desc-img-wrap img{height:64vw;min-height:220px;max-height:400px}
+  .desc-img-wrap::before{inset:-10px 10px 10px -10px}
+  .desc-bottom{transform:none !important;opacity:1 !important}
   #stats{padding:60px 28px}
   #gallery{padding:60px 28px}
   #videos{padding:80px 28px}
@@ -355,7 +362,9 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
   .ps-item:nth-child(n+3){border-top:1px solid var(--gborder)}
   #provfrei{padding:18px 28px}
   .provfrei-sep{display:none}
-  .provfrei-inner{gap:14px}
+  .provfrei-inner{gap:10px;flex-direction:column;text-align:center}
+  .provfrei-left{justify-content:center;flex-wrap:wrap;gap:10px}
+  .provfrei-right{font-size:14px}
 }
 @media(max-width:640px){
   .contact-form{grid-template-columns:1fr}
@@ -366,13 +375,28 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
   .vid-item:nth-child(n){grid-column:span 1}
   .nbhd-cards{grid-template-columns:1fr}
   .amen-grid{grid-template-columns:1fr}
+  .feat-list{grid-template-columns:1fr}
+  .desc-img-wrap img{height:56vw;min-height:200px}
   #fcta{bottom:24px;right:24px}
   .nbhd-quote{flex-direction:column;gap:16px;padding:28px}
   .prop-strip-inner{grid-template-columns:1fr}
   .ps-item{border-right:none;border-bottom:1px solid var(--gborder)}
+  .ps-item:nth-child(2),.ps-item:nth-child(4){border-left:1px solid var(--gborder);padding-left:24px}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
   .stat-item:nth-child(5){grid-column:1/-1}
   .stats-grid .stat-item:nth-child(5)::after{display:none}
+}
+@media(max-width:480px){
+  #provfrei{padding:14px 16px}
+  .provfrei-badge{font-size:11px;letter-spacing:.15em}
+  .provfrei-dot{display:none}
+  .provfrei-left{flex-direction:column;gap:4px}
+  .provfrei-right{font-size:12px}
+  .provfrei-right strong{font-size:13px}
+  .hero-badge span{font-size:9px;letter-spacing:.16em}
+  .hero-savings{font-size:11px;padding:9px 16px;letter-spacing:.04em}
+  .hero-sub{font-size:11px;letter-spacing:.18em}
+  .hero-price small{font-size:11px;letter-spacing:.12em}
 }
 </style>
 </head>
@@ -552,9 +576,15 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
 
 <!-- DESCRIPTION -->
 <section id="description">
-  <div class="desc-content" id="dcontent">
+  <div class="desc-top" id="dcontent">
     <div class="sec-label">Das Objekt</div>
     <h2 class="sec-title">Modernes Wohnen<br><em>ohne Kompromisse</em></h2>
+  </div>
+  <div class="desc-img-wrap" id="dimg">
+    <div class="img-accent"></div>
+    <img src="./assets/images/description-image.jpg" alt="Innenansicht der Doppelhaushälfte Oberasbach" loading="lazy">
+  </div>
+  <div class="desc-bottom" id="dbottom">
     <p class="desc-txt">Diese modernisierte Doppelhaushälfte in Oberasbach bietet auf 152 m² Wohnfläche und 233 m² Grundstück ein durchdachtes Raumkonzept mit zeitlosem Charakter – ideal für Familien oder Paare, die mehr wollen.</p>
     <p class="desc-txt">Hochwertig saniert und mit Liebe zum Detail ausgestattet: von der Designerküche mit Markengeräten über Fußbodenheizung in allen Etagen bis hin zum stimmungsvollen Dachgeschoss mit Balken und Dachfenstern.</p>
     <div class="feat-list">
@@ -569,9 +599,6 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
     </div>
     <div class="gold-line"></div>
     <a href="#contact" class="btn-gold">Jetzt Besichtigung vereinbaren</a>
-  </div>
-  <div class="desc-img-wrap" id="dimg">
-    <img src="./assets/images/description-image.jpg" alt="Innenansicht der Doppelhaushälfte Oberasbach" loading="lazy">
   </div>
 </section>
 
@@ -794,7 +821,7 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
       </a>
 
     </div>
-    <div class="contact-note">Erreichbar: Montag – Samstag &nbsp;·&nbsp; 9:00 – 19:00 Uhr &nbsp;·&nbsp; Direkt vom Eigentümer</div>
+    <div class="contact-note">Jederzeit für Sie erreichbar &nbsp;·&nbsp; Direkt vom Eigentümer &nbsp;·&nbsp; Keine Maklergebühren</div>
   </div>
 </section>
 
@@ -993,6 +1020,7 @@ $$('.stat-item').forEach((el,i) => {
 });
 inView('#dcontent', () => animate('#dcontent', {opacity:[0,1],x:[-40,0]}, {duration:.9, easing:eIn}), {margin:'-10% 0px'});
 inView('#dimg',     () => animate('#dimg',     {opacity:[0,1],x:[40,0]},  {duration:.9, easing:eIn}), {margin:'-10% 0px'});
+inView('#dbottom',  () => animate('#dbottom',  {opacity:[0,1],y:[30,0]},  {duration:.9, delay:.15, easing:eIn}), {margin:'-10% 0px'});
 $$('.ps-item').forEach((el,i) => {
   inView(el, () => animate(el, {opacity:[0,1],y:[20,0]}, {duration:.6, delay:i*.08, easing:eIn}), {margin:'-5% 0px'});
 });
