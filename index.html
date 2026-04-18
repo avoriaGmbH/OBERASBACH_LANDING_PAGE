@@ -292,6 +292,36 @@ footer{padding:60px;background:var(--bg2);border-top:1px solid var(--gborder);di
 .fcta-btn-wa:hover{background:var(--wa2);transform:scale(1.1);box-shadow:0 12px 40px rgba(37,211,102,.5)}
 .fcta-btn-wa svg{width:22px;height:22px;fill:#fff}
 
+/* ── MOBILE GALLERY LIGHTBOX (Instagram style) ── */
+.mlb{position:fixed;inset:0;z-index:2000;background:rgba(7,7,9,.99);opacity:0;pointer-events:none;transition:opacity .35s}
+.mlb.on{opacity:1;pointer-events:all}
+.mlb-track{position:fixed;inset:0;overflow-y:scroll;scroll-snap-type:y mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.mlb-track::-webkit-scrollbar{display:none}
+.mlb-slide{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;scroll-snap-align:start;padding:60px 20px}
+.mlb-slide img{max-width:100%;max-height:82vh;object-fit:contain;display:block;opacity:0}
+.mlb-slide.enter-init img{opacity:1}
+.mlb-slide.enter-down img{animation:imgFromBelow .62s cubic-bezier(.16,1,.3,1) forwards}
+.mlb-slide.enter-up   img{animation:imgFromAbove .62s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes imgFromBelow{from{opacity:0;transform:translateY(72px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes imgFromAbove{from{opacity:0;transform:translateY(-72px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes sline-rev{0%{transform:scaleY(0);transform-origin:bottom}50%{transform:scaleY(1);transform-origin:bottom}51%{transform:scaleY(1);transform-origin:top}100%{transform:scaleY(0);transform-origin:top}}
+.mlb-ind{position:absolute;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;pointer-events:none;opacity:1;transition:opacity .22s;z-index:1}
+.mlb-track.scrolling .mlb-ind{opacity:0}
+.mlb-ind-top{top:66px;flex-direction:column-reverse}
+.mlb-ind-bot{bottom:22px}
+.mlb-slide:first-child .mlb-ind-top{display:none !important}
+.mlb-slide:last-child .mlb-ind-bot{display:none !important}
+.mlb-ind span{font-size:8px;letter-spacing:.34em;text-transform:uppercase;color:rgba(245,240,232,.38);white-space:nowrap}
+.mlb-ind-line{width:1px;height:28px}
+.mlb-ind-line.dn{background:linear-gradient(to bottom,var(--gold),transparent);animation:sline 2s ease-in-out infinite}
+.mlb-ind-line.up{background:linear-gradient(to top,var(--gold),transparent);animation:sline-rev 2s ease-in-out infinite}
+.mlb-x{position:fixed;top:18px;right:18px;z-index:2002;background:rgba(13,13,18,.85);border:1px solid rgba(201,160,112,.25);color:var(--gold);width:40px;height:40px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(10px);transition:all .3s;line-height:1;font-family:'Cormorant Garamond',serif}
+.mlb-x:hover,.mlb-x:active{background:var(--gold);color:var(--bg)}
+.mlb-num{position:fixed;top:22px;left:20px;z-index:2002;font-size:10px;letter-spacing:.28em;color:var(--muted);background:rgba(13,13,18,.8);backdrop-filter:blur(8px);border:1px solid var(--gborder);padding:6px 14px}
+.mlb-hint{position:fixed;bottom:34px;left:50%;transform:translateX(-50%);z-index:2002;display:flex;flex-direction:column;align-items:center;gap:7px;opacity:0;transition:opacity .7s;pointer-events:none}
+.mlb-hint-txt{font-size:9px;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.mlb-hint-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sline 1.8s ease-in-out infinite}
+
 /* ── LIGHTBOX ───────────────────────────────────── */
 .lb{position:fixed;inset:0;z-index:2000;background:rgba(7,7,9,.97);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s}
 .lb.on{opacity:1;pointer-events:all}
@@ -643,22 +673,22 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
   <h2 class="sec-title">Erleben Sie das <em>Haus</em></h2>
   <div class="vid-grid">
     <div class="vid-item" data-src="./assets/videos/video-2.mp4">
-      <video muted loop playsinline><source src="./assets/videos/video-2.mp4" type="video/mp4"></video>
+      <video muted loop playsinline preload="metadata"><source src="./assets/videos/video-2.mp4" type="video/mp4"></video>
       <div class="vid-ov"><div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
       <div class="vid-label">Innenbereich</div>
     </div>
     <div class="vid-item" data-src="./assets/videos/video-3.mp4">
-      <video muted loop playsinline><source src="./assets/videos/video-3.mp4" type="video/mp4"></video>
+      <video muted loop playsinline preload="metadata"><source src="./assets/videos/video-3.mp4" type="video/mp4"></video>
       <div class="vid-ov"><div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
       <div class="vid-label">Wohnräume</div>
     </div>
     <div class="vid-item" data-src="./assets/videos/video-4.mp4">
-      <video muted loop playsinline><source src="./assets/videos/video-4.mp4" type="video/mp4"></video>
+      <video muted loop playsinline preload="metadata"><source src="./assets/videos/video-4.mp4" type="video/mp4"></video>
       <div class="vid-ov"><div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
       <div class="vid-label">Außenbereich</div>
     </div>
     <div class="vid-item" data-src="./assets/videos/video-5.mp4">
-      <video muted loop playsinline><source src="./assets/videos/video-5.mp4" type="video/mp4"></video>
+      <video muted loop playsinline preload="metadata"><source src="./assets/videos/video-5.mp4" type="video/mp4"></video>
       <div class="vid-ov"><div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
       <div class="vid-label">Komplettansicht</div>
     </div>
@@ -853,6 +883,13 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
   </button>
 </div>
 
+<!-- MOBILE GALLERY LIGHTBOX -->
+<div class="mlb" id="mlb" role="dialog" aria-modal="true">
+  <div class="mlb-track" id="mlb-track"></div>
+  <button class="mlb-x" id="mlb-x" aria-label="Schließen">✕</button>
+  <div class="mlb-num" id="mlb-num">1 / 10</div>
+</div>
+
 <!-- LIGHTBOX -->
 <div class="lb" id="lb" role="dialog">
   <button class="lb-close" id="lb-close" aria-label="Schließen">✕</button>
@@ -867,7 +904,7 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
 <!-- VIDEO MODAL -->
 <div class="vm" id="vm" role="dialog">
   <button class="vm-close" id="vm-close" aria-label="Schließen">✕</button>
-  <video id="vm-vid" controls playsinline><source src="" type="video/mp4"></video>
+  <video id="vm-vid" controls playsinline muted><source src="" type="video/mp4"></video>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
@@ -1098,7 +1135,112 @@ function navLB(d) {
   });
 }
 
-$$('.gal-item').forEach(el => el.addEventListener('click', () => openLB(+el.dataset.i)));
+// ── MOBILE GALLERY LIGHTBOX ────────────────────────
+const mlb      = document.getElementById('mlb');
+const mlbTrack = document.getElementById('mlb-track');
+const mlbNum   = document.getElementById('mlb-num');
+let mlbObs     = null;
+
+function openMLB(startIdx) {
+  mlbTrack.innerHTML = '';
+  imgs.forEach((src, i) => {
+    const slide = document.createElement('div');
+    slide.className = 'mlb-slide';
+    slide.dataset.i = i;
+
+    const img = document.createElement('img');
+    img.src = src; img.alt = `Foto ${i+1}`;
+    slide.appendChild(img);
+
+    if (i > 0) {
+      const indUp = document.createElement('div');
+      indUp.className = 'mlb-ind mlb-ind-top';
+      indUp.innerHTML = '<div class="mlb-ind-line up"></div><span>Scrollen</span>';
+      slide.appendChild(indUp);
+    }
+    if (i < imgs.length - 1) {
+      const indDn = document.createElement('div');
+      indDn.className = 'mlb-ind mlb-ind-bot';
+      indDn.innerHTML = '<span>Scrollen</span><div class="mlb-ind-line dn"></div>';
+      slide.appendChild(indDn);
+    }
+
+    mlbTrack.appendChild(slide);
+  });
+
+  // Belt-and-suspenders: force-remove top indicator from first slide
+  mlbTrack.firstElementChild?.querySelector('.mlb-ind-top')?.remove();
+  // Force-remove bottom indicator from last slide
+  mlbTrack.lastElementChild?.querySelector('.mlb-ind-bot')?.remove();
+
+  mlb.classList.add('on');
+  document.body.style.overflow = 'hidden';
+
+  const slides = mlbTrack.querySelectorAll('.mlb-slide');
+  slides[startIdx].scrollIntoView();
+  slides[startIdx].classList.add('enter-init');
+  mlbNum.textContent = `${startIdx + 1} / ${imgs.length}`;
+
+  let lastST = mlbTrack.scrollTop;
+  let dir = 'down';
+  let scrollTimer = null;
+
+  const showInds = () => mlbTrack.classList.remove('scrolling');
+
+  const onScroll = () => {
+    const st = mlbTrack.scrollTop;
+    dir = st > lastST ? 'down' : 'up';
+    lastST = st;
+    mlbTrack.classList.add('scrolling');
+    const h = mlbTrack.clientHeight || window.innerHeight;
+    const idx = Math.max(0, Math.min(Math.round(st / h), slides.length - 1));
+    mlbNum.textContent = `${idx + 1} / ${imgs.length}`;
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(showInds, 350);
+  };
+  mlbTrack.addEventListener('scroll', onScroll, {passive: true});
+  // scrollend for browsers that support it (instant reveal)
+  mlbTrack.addEventListener('scrollend', showInds, {passive: true});
+
+  // Image entrance animation — direction-aware
+  if (mlbObs) mlbObs.disconnect();
+  mlbObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        if (!e.target.classList.contains('enter-init')) {
+          e.target.classList.remove('enter-down', 'enter-up');
+          void e.target.offsetHeight;
+          e.target.classList.add(dir === 'down' ? 'enter-down' : 'enter-up');
+        }
+      } else {
+        e.target.classList.remove('enter-down', 'enter-up', 'enter-init');
+      }
+    });
+  }, {root: mlbTrack, threshold: 0.5});
+  slides.forEach(s => mlbObs.observe(s));
+
+  mlb._cleanup = () => {
+    clearTimeout(scrollTimer);
+    mlbTrack.removeEventListener('scroll', onScroll);
+    mlbTrack.removeEventListener('scrollend', showInds);
+    mlbTrack.classList.remove('scrolling');
+  };
+}
+
+function closeMLB() {
+  mlb.classList.remove('on');
+  document.body.style.overflow = '';
+  if (mlbObs) { mlbObs.disconnect(); mlbObs = null; }
+  if (mlb._cleanup) { mlb._cleanup(); mlb._cleanup = null; }
+}
+
+document.getElementById('mlb-x').addEventListener('click', closeMLB);
+mlb.addEventListener('click', e => { if (e.target === mlb) closeMLB(); });
+
+$$('.gal-item').forEach(el => el.addEventListener('click', () => {
+  if (window.innerWidth <= 1024) openMLB(+el.dataset.i);
+  else openLB(+el.dataset.i);
+}));
 document.getElementById('lb-close').addEventListener('click', closeLB);
 document.querySelector('.lb-prev').addEventListener('click', () => navLB(-1));
 document.querySelector('.lb-next').addEventListener('click', () => navLB(1));
@@ -1108,12 +1250,23 @@ lb.addEventListener('click', e => { if(e.target===lb) closeLB(); });
 const vm = document.getElementById('vm');
 const vmVid = document.getElementById('vm-vid');
 
+// Auto-play video when centred in viewport
+const vidAutoObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    const v = e.target.querySelector('video');
+    if (!v) return;
+    if (e.isIntersecting) { v.play().catch(()=>{}); }
+    else { v.pause(); v.currentTime = 0; }
+  });
+}, {threshold: 0.5});
+
 $$('.vid-item').forEach(item => {
   const v = item.querySelector('video');
+  vidAutoObs.observe(item);
   item.addEventListener('mouseenter', () => v.play().catch(()=>{}));
   item.addEventListener('mouseleave', () => { v.pause(); v.currentTime=0; });
   item.addEventListener('click', () => {
-    vmVid.src = item.dataset.src; vmVid.load(); vmVid.play().catch(()=>{});
+    vmVid.src = item.dataset.src; vmVid.muted = true; vmVid.load(); vmVid.play().catch(()=>{});
     vm.classList.add('on'); document.body.style.overflow = 'hidden';
   });
 });
@@ -1127,7 +1280,7 @@ vm.addEventListener('click', e => { if(e.target===vm) closeVM(); });
 
 // ── KEYBOARD ──────────────────────────────────────
 document.addEventListener('keydown', e => {
-  if (e.key==='Escape') { closeLB(); closeVM(); toggleMenu(false); }
+  if (e.key==='Escape') { closeLB(); closeVM(); closeMLB(); toggleMenu(false); }
   if (lb.classList.contains('on')) {
     if (e.key==='ArrowLeft') navLB(-1);
     if (e.key==='ArrowRight') navLB(1);
