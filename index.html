@@ -456,7 +456,8 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
   .feat-list{grid-template-columns:1fr}
   .trust-grid{grid-template-columns:1fr}
   .trust-checklist{grid-template-columns:1fr;max-width:100%}
-  .trust-check-item:nth-child(1),.trust-check-item:nth-child(2){border-top:1px solid rgba(201,160,112,.08)}
+  .trust-check-item:nth-child(1){border-top:1px solid rgba(201,160,112,.08)}
+  .trust-check-item:nth-child(2){border-top:none}
   .desc-img-wrap img{height:56vw;min-height:200px}
   #fcta{bottom:24px;right:24px}
   .nbhd-quote{flex-direction:column;gap:16px;padding:28px}
@@ -537,7 +538,7 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
 <!-- HERO -->
 <section id="hero">
   <video id="hero-video" autoplay muted loop playsinline>
-    <source src="./assets/videos/video-1.mp4" type="video/mp4">
+    <source src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/videos/video-1.mp4" type="video/mp4">
   </video>
   <canvas id="hero-canvas"></canvas>
   <div class="hero-overlay"></div>
@@ -660,6 +661,57 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
   </div>
 </section>
 
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gal-header">
+    <div>
+      <div class="sec-label">Fotogalerie</div>
+      <h2 class="sec-title">Einblicke ins <em>Zuhause</em></h2>
+    </div>
+    <p style="color:var(--muted);font-size:13px;max-width:260px;text-align:right;line-height:1.6">152 m² vollständig saniert – Fußbodenheizung, Designerküche, 2 Vollbäder. Sofort einzugsbereit.</p>
+  </div>
+  <div class="gal-grid">
+    <div class="gal-item" data-i="0"><img src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/images/gallery-1.jpg" alt="Wohnzimmer" loading="lazy"><div class="gal-ov"><span>Wohnzimmer</span></div></div>
+    <div class="gal-item" data-i="1"><img src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/images/gallery-6.jpg" alt="Küche" loading="lazy"><div class="gal-ov"><span>Designerküche</span></div></div>
+    <div class="gal-item" data-i="2"><img src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/images/gallery-2.jpg" alt="Esszimmer" loading="lazy"><div class="gal-ov"><span>Esszimmer</span></div></div>
+    <div class="gal-item" data-i="3"><img src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/images/gallery-4.jpg" alt="Schlafzimmer" loading="lazy"><div class="gal-ov"><span>Schlafzimmer</span></div></div>
+    <div class="gal-item" data-i="4"><img src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/images/gallery-5.jpg" alt="Terrasse" loading="lazy"><div class="gal-ov"><span>Terrasse</span></div></div>
+    <div class="gal-item" data-i="5"><img src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/images/gallery-3.jpg" alt="Badezimmer" loading="lazy"><div class="gal-ov"><span>Badezimmer</span></div></div>
+    <div class="gal-item" data-i="6"><img src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/images/gallery-7.jpg" alt="Garten" loading="lazy"><div class="gal-ov"><span>Garten</span></div></div>
+    <div class="gal-item" data-i="7"><img src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/images/gallery-8.jpg" alt="Zimmer" loading="lazy"><div class="gal-ov"><span>Kinderzimmer</span></div></div>
+    <div class="gal-item" data-i="8"><img src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/images/gallery-9.jpg" alt="Dachgeschoss" loading="lazy"><div class="gal-ov"><span>Dachgeschoss</span></div></div>
+    <div class="gal-item" data-i="9"><img src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/images/gallery-10.jpg" alt="Außenansicht" loading="lazy"><div class="gal-ov"><span>Außenansicht</span></div></div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos">
+  <div class="sec-label">Virtueller Rundgang</div>
+  <h2 class="sec-title">Erleben Sie das <em>Haus</em></h2>
+  <div class="vid-grid">
+    <div class="vid-item" data-src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/videos/video-2.mp4">
+      <video muted loop playsinline preload="metadata"><source src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/videos/video-2.mp4" type="video/mp4"></video>
+      <div class="vid-ov"><div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+      <div class="vid-label">Innenbereich</div>
+    </div>
+    <div class="vid-item" data-src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/videos/video-3.mp4">
+      <video muted loop playsinline preload="metadata"><source src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/videos/video-3.mp4" type="video/mp4"></video>
+      <div class="vid-ov"><div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+      <div class="vid-label">Wohnräume</div>
+    </div>
+    <div class="vid-item" data-src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/videos/video-4.mp4">
+      <video muted loop playsinline preload="metadata"><source src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/videos/video-4.mp4" type="video/mp4"></video>
+      <div class="vid-ov"><div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+      <div class="vid-label">Außenbereich</div>
+    </div>
+    <div class="vid-item" data-src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/videos/video-5.mp4">
+      <video muted loop playsinline preload="metadata"><source src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/videos/video-5.mp4" type="video/mp4"></video>
+      <div class="vid-ov"><div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+      <div class="vid-label">Komplettansicht</div>
+    </div>
+  </div>
+</section>
+
 <!-- TRUST SECTION -->
 <section id="trust">
   <div class="trust-inner">
@@ -760,7 +812,7 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
   </div>
   <div class="desc-img-wrap" id="dimg">
     <div class="img-accent"></div>
-    <img src="./assets/images/description-image.jpg" alt="Innenansicht der Doppelhaushälfte Oberasbach" loading="lazy">
+    <img src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/images/description-image.jpg" alt="Innenansicht der Doppelhaushälfte Oberasbach" loading="lazy">
   </div>
   <div class="desc-bottom" id="dbottom">
     <p class="desc-txt">Diese modernisierte Doppelhaushälfte in Oberasbach bietet auf 152 m² Wohnfläche und 233 m² Grundstück ein durchdachtes Raumkonzept mit zeitlosem Charakter – ideal für Familien oder Paare, die mehr wollen.</p>
@@ -793,57 +845,6 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
     <div class="ps-item"><span class="ps-key">Provision</span><span class="ps-val">0 € – Provisionsfrei</span></div>
   </div>
 </div>
-
-<!-- GALLERY -->
-<section id="gallery">
-  <div class="gal-header">
-    <div>
-      <div class="sec-label">Fotogalerie</div>
-      <h2 class="sec-title">Einblicke ins <em>Zuhause</em></h2>
-    </div>
-    <p style="color:var(--muted);font-size:13px;max-width:260px;text-align:right;line-height:1.6">152 m² vollständig saniert – Fußbodenheizung, Designerküche, 2 Vollbäder. Sofort einzugsbereit.</p>
-  </div>
-  <div class="gal-grid">
-    <div class="gal-item" data-i="0"><img src="./assets/images/gallery-1.jpg" alt="Wohnzimmer" loading="lazy"><div class="gal-ov"><span>Wohnzimmer</span></div></div>
-    <div class="gal-item" data-i="1"><img src="./assets/images/gallery-6.jpg" alt="Küche" loading="lazy"><div class="gal-ov"><span>Designerküche</span></div></div>
-    <div class="gal-item" data-i="2"><img src="./assets/images/gallery-2.jpg" alt="Esszimmer" loading="lazy"><div class="gal-ov"><span>Esszimmer</span></div></div>
-    <div class="gal-item" data-i="3"><img src="./assets/images/gallery-4.jpg" alt="Schlafzimmer" loading="lazy"><div class="gal-ov"><span>Schlafzimmer</span></div></div>
-    <div class="gal-item" data-i="4"><img src="./assets/images/gallery-5.jpg" alt="Terrasse" loading="lazy"><div class="gal-ov"><span>Terrasse</span></div></div>
-    <div class="gal-item" data-i="5"><img src="./assets/images/gallery-3.jpg" alt="Badezimmer" loading="lazy"><div class="gal-ov"><span>Badezimmer</span></div></div>
-    <div class="gal-item" data-i="6"><img src="./assets/images/gallery-7.jpg" alt="Garten" loading="lazy"><div class="gal-ov"><span>Garten</span></div></div>
-    <div class="gal-item" data-i="7"><img src="./assets/images/gallery-8.jpg" alt="Zimmer" loading="lazy"><div class="gal-ov"><span>Kinderzimmer</span></div></div>
-    <div class="gal-item" data-i="8"><img src="./assets/images/gallery-9.jpg" alt="Dachgeschoss" loading="lazy"><div class="gal-ov"><span>Dachgeschoss</span></div></div>
-    <div class="gal-item" data-i="9"><img src="./assets/images/gallery-10.jpg" alt="Außenansicht" loading="lazy"><div class="gal-ov"><span>Außenansicht</span></div></div>
-  </div>
-</section>
-
-<!-- VIDEOS -->
-<section id="videos">
-  <div class="sec-label">Virtueller Rundgang</div>
-  <h2 class="sec-title">Erleben Sie das <em>Haus</em></h2>
-  <div class="vid-grid">
-    <div class="vid-item" data-src="./assets/videos/video-2.mp4">
-      <video muted loop playsinline preload="metadata"><source src="./assets/videos/video-2.mp4" type="video/mp4"></video>
-      <div class="vid-ov"><div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
-      <div class="vid-label">Innenbereich</div>
-    </div>
-    <div class="vid-item" data-src="./assets/videos/video-3.mp4">
-      <video muted loop playsinline preload="metadata"><source src="./assets/videos/video-3.mp4" type="video/mp4"></video>
-      <div class="vid-ov"><div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
-      <div class="vid-label">Wohnräume</div>
-    </div>
-    <div class="vid-item" data-src="./assets/videos/video-4.mp4">
-      <video muted loop playsinline preload="metadata"><source src="./assets/videos/video-4.mp4" type="video/mp4"></video>
-      <div class="vid-ov"><div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
-      <div class="vid-label">Außenbereich</div>
-    </div>
-    <div class="vid-item" data-src="./assets/videos/video-5.mp4">
-      <video muted loop playsinline preload="metadata"><source src="./assets/videos/video-5.mp4" type="video/mp4"></video>
-      <div class="vid-ov"><div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
-      <div class="vid-label">Komplettansicht</div>
-    </div>
-  </div>
-</section>
 
 <!-- AMENITIES -->
 <section id="amenities">
@@ -1287,7 +1288,7 @@ $$('.gal-item').forEach(el => {
 const lb = document.getElementById('lb');
 const lbImg = document.getElementById('lb-img');
 const lbCounter = document.getElementById('lb-counter');
-const imgs = Array.from({length:10}, (_,i) => `./assets/images/gallery-${i+1}.jpg`);
+const imgs = Array.from({length:10}, (_,i) => `https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/images/gallery-${i+1}.jpg`);
 let ci = 0;
 
 function openLB(i) {
