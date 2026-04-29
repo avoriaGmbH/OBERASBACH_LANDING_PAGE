@@ -406,8 +406,8 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
   .stats-grid{grid-template-columns:repeat(3,1fr)}
 }
 @media(max-width:1024px){
-  nav{padding:18px 28px}
-  nav.scrolled{padding:12px 28px}
+  nav{padding:18px 28px;padding-top:max(18px,env(safe-area-inset-top))}
+  nav.scrolled{padding:12px 28px;padding-top:max(12px,env(safe-area-inset-top))}
   .nav-links{display:none}
   .hamburger{display:flex}
   .nav-cta{display:none}
