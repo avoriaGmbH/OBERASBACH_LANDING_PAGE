@@ -9,6 +9,7 @@
   gtag('js', new Date());
 
   gtag('config', 'AW-18143585810');
+  gtag('config', 'GT-K82LCHWM');
 </script>
 <!-- Event snippet for Click to call conversion -->
 <script>
@@ -20,6 +21,21 @@ function gtag_report_conversion(url) {
   };
   gtag('event', 'conversion', {
       'send_to': 'AW-18143585810/ROacCLCigakcEJLMxMtD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+<!-- Event snippet for Email click conversion -->
+<script>
+function gtag_email_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'GT-K82LCHWM',
       'event_callback': callback
   });
   return false;
@@ -1013,7 +1029,7 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
       </a>
 
       <!-- EMAIL -->
-      <a href="mailto:info@wohnen-in-oberasbach.de" class="ccard">
+      <a href="mailto:info@wohnen-in-oberasbach.de" class="ccard" onclick="return gtag_email_conversion('mailto:info@wohnen-in-oberasbach.de')">
         <div class="ccard-glow"></div>
         <div class="ccard-icon-wrap">
           <svg viewBox="0 0 24 24">
