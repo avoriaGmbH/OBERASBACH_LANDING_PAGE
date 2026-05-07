@@ -10,6 +10,21 @@
 
   gtag('config', 'AW-18143585810');
 </script>
+<!-- Event snippet for Click to call conversion -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18143585810/DgseCJ2v_agcEJLMxMtD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Doppelhaushälfte in Oberasbach kaufen – provisionsfrei, direkt vom Eigentümer. 695.000 € · 152 m² · 4 Zimmer · Nähe Fürth & Nürnberg. Ersparnis bis 25.000 €.">
@@ -1297,7 +1312,7 @@ $$('.gal-item').forEach(el => {
 const lb = document.getElementById('lb');
 const lbImg = document.getElementById('lb-img');
 const lbCounter = document.getElementById('lb-counter');
-const imgs = Array.from({length:10}, (_,i) => `https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/images/gallery-${i+1}.jpg`);
+const imgs = Array.from({length:10}, (_,i) => `https://-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/images/gallery-${i+1}.jpg`);
 let ci = 0;
 
 function openLB(i) {
