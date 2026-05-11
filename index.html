@@ -1477,13 +1477,14 @@ $$('.vid-item').forEach(item => {
   item.addEventListener('mouseenter', () => v.play().catch(()=>{}));
   item.addEventListener('mouseleave', () => { v.pause(); v.currentTime=0; });
   item.addEventListener('click', () => {
+    vm.style.opacity = '';
     vmVid.src = item.dataset.src; vmVid.muted = true; vmVid.load(); vmVid.play().catch(()=>{});
     vm.classList.add('on'); document.body.style.overflow = 'hidden';
   });
 });
 function closeVM() {
   animate(vm, {opacity:[1,0]}, {duration:.3}).then(() => {
-    vm.classList.remove('on'); vmVid.pause(); vmVid.src=''; document.body.style.overflow='';
+    vm.classList.remove('on'); vm.style.opacity = ''; vmVid.pause(); vmVid.src=''; document.body.style.overflow='';
   });
 }
 document.getElementById('vm-close').addEventListener('click', closeVM);
