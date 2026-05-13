@@ -20,13 +20,13 @@ function gtag_report_conversion(url) {
     }
   };
   gtag('event', 'conversion', {
-      'send_to': 'AW-18143585810/ROacCLCigakcEJLMxMtD',
+      'send_to': 'AW-18143585810/DgseCJ2v_agcEJLMxMtD',
       'event_callback': callback
   });
   return false;
 }
 </script>
-<!-- Event snippet for Email click conversion -->
+<!-- Event snippet for Submit lead form (email click) -->
 <script>
 function gtag_email_conversion(url) {
   var callback = function () {
@@ -35,7 +35,7 @@ function gtag_email_conversion(url) {
     }
   };
   gtag('event', 'conversion', {
-      'send_to': 'GT-K82LCHWM',
+      'send_to': 'AW-18143585810/U-WKCO_awKgcEJLMxMtD',
       'event_callback': callback
   });
   return false;
@@ -43,8 +43,8 @@ function gtag_email_conversion(url) {
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Doppelhaushälfte in Oberasbach kaufen – provisionsfrei, direkt vom Eigentümer. 695.000 € · 152 m² · 4 Zimmer · Nähe Fürth & Nürnberg. Ersparnis bis 25.000 €.">
-<title>Haus Oberasbach – Provisionsfrei vom Eigentümer | 695.000 €</title>
+<meta name="description" content="Kernsanierte Doppelhaushälfte in Oberasbach kaufen: 152 m², 4 Zimmer, Garten, Garage, sofort bezugsbereit und 0 € Käuferprovision. Einziehen statt sanieren – direkt vom Eigentümer.">
+<title>Haus kaufen in Oberasbach bei Nürnberg | Kernsanierte Doppelhaushälfte – sofort bezugsbereit, 0 € Provision</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 4L4 13.5V28h8v-8h8v8h8V13.5L16 4z' fill='none' stroke='%23C9A070' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,10 +75,9 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 
 /* ── CURSOR ─────────────────────────────────────── */
-#cur-dot,#cur-ring{position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
-#cur-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;transition:width .2s,height .2s}
-#cur-ring{width:40px;height:40px;border:1px solid var(--gold);border-radius:50%;opacity:.6;transition:width .2s,height .2s,border-color .2s}
-@media(hover:none){#cur-dot,#cur-ring{display:none}body{cursor:auto}}
+#cur-dot,#cur-ring{display:none}
+body{cursor:auto}
+a,button,[onclick]{cursor:pointer}
 
 /* ── SCROLL PROGRESS ────────────────────────────── */
 #sprogress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold-d),var(--gold),var(--gold-l));z-index:1000;transform-origin:left;transform:scaleX(0);width:100%}
@@ -92,8 +91,10 @@ nav.scrolled{background:rgba(7,7,9,.92);backdrop-filter:blur(20px);-webkit-backd
 .logo-name{font-family:'Syncopate',sans-serif;font-size:13px;letter-spacing:.22em;color:var(--gold);font-weight:700;line-height:1}
 .logo-sub-lbl{font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:500;font-family:'Inter',sans-serif;margin-top:2px}
 .nav-links{display:flex;gap:36px;list-style:none}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:11px;letter-spacing:.22em;text-transform:uppercase;transition:color .3s;font-weight:500}
-.nav-links a:hover{color:var(--gold)}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:11px;letter-spacing:.22em;text-transform:uppercase;transition:color .3s,background .3s,padding .3s;font-weight:500;position:relative;padding:6px 10px;border-radius:2px}
+.nav-links a::after{content:'';position:absolute;bottom:2px;left:10px;right:10px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.nav-links a:hover{color:var(--gold);background:rgba(201,160,112,.07)}
+.nav-links a:hover::after{transform:scaleX(1)}
 .nav-right{display:flex;align-items:center;gap:24px}
 .nav-cta{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:10px 24px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-family:'Inter',sans-serif;font-weight:500;cursor:pointer;transition:all .3s}
 .nav-cta:hover{background:var(--gold);color:var(--bg)}
@@ -120,23 +121,29 @@ nav.scrolled{background:rgba(7,7,9,.92);backdrop-filter:blur(20px);-webkit-backd
 .mm-cta{margin-top:8px}
 
 /* ── HERO ──────────────────────────────────────── */
-#hero{position:relative;height:100vh;min-height:700px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+#hero{position:relative;height:100svh;min-height:780px;overflow:hidden;display:flex;align-items:center;justify-content:center}
 #hero-canvas{position:absolute;inset:0;z-index:2;opacity:.55}
 #hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,7,9,.82),rgba(7,7,9,.36) 50%,rgba(7,7,9,.9));z-index:3}
-.hero-content{position:relative;z-index:4;text-align:center;max-width:1000px;padding:110px 40px 110px}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,7,9,.9),rgba(7,7,9,.42) 48%,rgba(7,7,9,.92));z-index:3}
+.hero-content{position:relative;z-index:4;text-align:center;max-width:1080px;padding:165px 40px 195px}
 .hero-badge{display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(201,160,112,.4);background:rgba(201,160,112,.06);backdrop-filter:blur(10px);padding:8px 22px;margin-bottom:22px;opacity:0}
 .badge-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite;flex-shrink:0}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
 .hero-badge span{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-l);font-weight:500}
-.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,7.8vw,100px);font-weight:300;line-height:.92;letter-spacing:-.02em;margin-bottom:22px}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6.8vw,92px);font-weight:400;line-height:.96;letter-spacing:0;margin-bottom:22px;text-transform:uppercase}
 .hero-title .line{display:block;overflow:hidden;padding-bottom:.18em;margin-bottom:-.18em}
 .hero-title .word{display:inline-block;transform:translateY(110%);opacity:0}
-.hero-title .acc{color:var(--gold);font-style:italic}
-.hero-sub{font-size:15px;letter-spacing:.03em;color:rgba(245,240,232,.88);margin-bottom:16px;opacity:0;text-shadow:0 0 24px rgba(201,160,112,.18);line-height:1.6;max-width:680px;margin-left:auto;margin-right:auto}
+.hero-title .acc{color:var(--gold-l);font-style:normal}
+.hero-title .loc{font-size:.44em;color:rgba(245,240,232,.75);letter-spacing:.14em;font-weight:300;text-shadow:0 2px 24px rgba(0,0,0,.7),0 0 40px rgba(0,0,0,.5)}
+.hero-sub{font-size:16px;letter-spacing:.01em;color:rgba(245,240,232,.9);margin-bottom:14px;opacity:0;text-shadow:0 0 24px rgba(201,160,112,.18);line-height:1.6;max-width:760px;margin-left:auto;margin-right:auto}
+.hero-subline{font-size:14px;color:var(--gold-l);font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
 .hero-savings{display:inline-flex;align-items:center;gap:12px;background:rgba(201,160,112,.14);border:1px solid rgba(201,160,112,.45);backdrop-filter:blur(12px);padding:11px 24px;margin-bottom:20px;font-size:13px;letter-spacing:.07em;color:var(--gold-l);opacity:0;box-shadow:0 0 40px rgba(201,160,112,.15),inset 0 0 30px rgba(201,160,112,.04)}
-.hero-price{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.4vw,42px);color:var(--gold);letter-spacing:.05em;margin-bottom:32px;opacity:0}
+.hero-price{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.8vw,46px);color:var(--gold-l);letter-spacing:.03em}
 .hero-price small{font-size:12px;letter-spacing:.2em;color:rgba(245,240,232,.78);font-family:'Inter',sans-serif;display:block;margin-bottom:5px;text-shadow:0 0 20px rgba(201,160,112,.15)}
+.hero-price-wrap{display:flex;align-items:center;justify-content:center;gap:26px;margin-bottom:24px;opacity:0;flex-direction:column}
+.hero-value-points{display:grid;gap:8px;text-align:left}
+.hero-value-points span{display:flex;align-items:center;gap:8px;font-size:12px;line-height:1.35;color:rgba(245,240,232,.82)}
+.hero-value-points span::before{content:'✓';color:#6ec97a;font-weight:700}
 .hero-acts{display:flex;gap:20px;justify-content:center;opacity:0}
 .btn-gold{background:var(--gold);color:var(--bg);border:none;padding:18px 46px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-family:'Inter',sans-serif;font-weight:600;cursor:pointer;transition:all .4s var(--ease);text-decoration:none;display:inline-block}
 .btn-gold:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 20px 40px rgba(201,160,112,.3)}
@@ -145,7 +152,14 @@ nav.scrolled{background:rgba(7,7,9,.92);backdrop-filter:blur(20px);-webkit-backd
 .btn-wa{background:var(--wa);color:#fff;border:none;padding:18px 46px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-family:'Inter',sans-serif;font-weight:700;cursor:pointer;transition:all .4s var(--ease);text-decoration:none;display:inline-flex;align-items:center;gap:10px;box-shadow:0 8px 32px rgba(37,211,102,.35)}
 .btn-wa:hover{background:var(--wa2);transform:translateY(-2px);box-shadow:0 16px 44px rgba(37,211,102,.5)}
 .btn-wa svg{flex-shrink:0}
-.hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:5;display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;cursor:pointer}
+.hero-feature-strip{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);z-index:5;width:min(1180px,calc(100% - 48px));display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.hero-feature-card{position:relative;min-width:0;display:flex;align-items:center;gap:11px;min-height:76px;padding:16px 14px;border:1px solid rgba(201,160,112,.18);border-radius:8px;background:linear-gradient(135deg,rgba(18,18,24,.82),rgba(7,7,9,.58));backdrop-filter:blur(18px);box-shadow:0 20px 50px rgba(0,0,0,.24),inset 0 1px 0 rgba(232,201,154,.08);color:rgba(245,240,232,.92);font-size:12px;line-height:1.35;font-weight:600;overflow:hidden;transition:border-color .3s,box-shadow .3s}
+.hero-feature-card:hover{border-color:rgba(201,160,112,.42);box-shadow:0 24px 60px rgba(0,0,0,.32),inset 0 1px 0 rgba(232,201,154,.18),0 0 0 1px rgba(201,160,112,.1)}
+.hero-feature-card:hover svg{background:rgba(201,160,112,.12);border-color:rgba(201,160,112,.4)}
+.hero-feature-card::before{content:'';position:absolute;left:12px;right:12px;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(232,201,154,.68),transparent)}
+.hero-feature-card svg{width:32px;height:32px;padding:7px;border:1px solid rgba(201,160,112,.18);border-radius:50%;background:rgba(201,160,112,.055);stroke:var(--gold-l);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;transition:background .3s,border-color .3s}
+.hero-feature-card span{min-width:0;overflow-wrap:break-word}
+.hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:5;display:none;flex-direction:column;align-items:center;gap:10px;opacity:0;cursor:pointer}
 .hero-scroll span{font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:var(--muted)}
 .scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sline 2s ease-in-out infinite}
 @keyframes sline{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
@@ -177,11 +191,28 @@ nav.scrolled{background:rgba(7,7,9,.92);backdrop-filter:blur(20px);-webkit-backd
 .stats-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr)}
 .stat-item{text-align:center;padding:40px;position:relative;opacity:0;transform:translateY(30px)}
 .stat-item:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;height:60%;width:1px;background:var(--gborder)}
+.stat-icon{width:34px;height:34px;margin:0 auto 16px;border:1px solid rgba(201,160,112,.2);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.stat-icon svg{width:18px;height:18px;stroke:var(--gold-l);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .stat-num{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,68px);font-weight:300;color:var(--gold);line-height:1;display:flex;align-items:baseline;justify-content:center;gap:4px}
 .stat-sfx{font-size:.38em;color:var(--gold-d);font-family:'Inter',sans-serif;font-weight:400}
 .stat-lbl{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-top:12px;font-weight:500}
 .stat-item.stat-prov .stat-num{color:#6ec97a}
 .stat-item.stat-prov .stat-lbl{color:rgba(110,201,122,.7)}
+
+/* ── VALUE / RENOVATION ─────────────────────────────────────── */
+#value-note{padding:34px 60px;background:linear-gradient(135deg,rgba(110,201,122,.09),rgba(201,160,112,.05));border-top:1px solid rgba(110,201,122,.18);border-bottom:1px solid rgba(201,160,112,.16)}
+.value-note-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:18px;text-align:center;color:var(--text);font-size:17px;line-height:1.6}
+.value-note-inner svg{width:28px;height:28px;stroke:#6ec97a;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.value-note-inner strong{color:var(--gold-l);font-weight:600}
+#renovation{padding:120px 60px;background:var(--bg2);border-bottom:1px solid var(--gborder)}
+.renovation-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.renovation-copy .desc-txt{max-width:540px}
+.renovation-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.renovation-card{min-height:128px;padding:28px;background:rgba(255,255,255,.035);border:1px solid rgba(201,160,112,.16);position:relative;overflow:hidden;transition:all .4s var(--ease)}
+.renovation-card::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.75}
+.renovation-card:hover{border-color:rgba(201,160,112,.36);transform:translateY(-4px);box-shadow:0 28px 58px rgba(201,160,112,.08)}
+.renovation-card svg{width:30px;height:30px;stroke:var(--gold-l);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin-bottom:20px}
+.renovation-card h3{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:400;color:var(--text);line-height:1.2}
 
 /* ── TRUST SECTION ──────────────────────────────── */
 #trust{background:var(--bg2);padding:100px 60px;position:relative;border-top:1px solid var(--gborder);border-bottom:1px solid var(--gborder);overflow:hidden}
@@ -311,7 +342,8 @@ nav.scrolled{background:rgba(7,7,9,.92);backdrop-filter:blur(20px);-webkit-backd
 .nbhd-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transition:transform .5s var(--ease)}
 .nbhd-card:hover::after{transform:scaleX(1)}
 .nbhd-card:hover{border-color:rgba(201,160,112,.25);transform:translateY(-6px)}
-.nbhd-icon{font-size:28px;margin-bottom:20px;display:block}
+.nbhd-icon{width:42px;height:42px;margin-bottom:22px;border:1px solid rgba(201,160,112,.18);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.nbhd-icon svg{width:21px;height:21px;stroke:var(--gold-l);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .nbhd-dist{font-size:30px;font-family:'Cormorant Garamond',serif;font-weight:300;color:var(--gold);margin-bottom:8px}
 .nbhd-name{font-size:14px;font-weight:500;margin-bottom:10px}
 .nbhd-items{list-style:none;display:flex;flex-direction:column;gap:6px}
@@ -436,6 +468,8 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
 
 /* ── RESPONSIVE ─────────────────────────────────── */
 @media(max-width:1280px){
+  #hero{min-height:820px}
+  .hero-feature-strip{grid-template-columns:repeat(3,1fr)}
   .gal-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:260px}
   .gal-item:nth-child(n){grid-column:span 1;grid-row:span 1}
   .gal-item:nth-child(1){grid-column:span 2;grid-row:span 1}
@@ -451,6 +485,12 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
   .nav-links{display:none}
   .hamburger{display:flex}
   .nav-cta{display:none}
+  #hero{height:auto;min-height:100svh;align-items:flex-start}
+  .hero-content{padding:104px 28px 270px}
+  .hero-price-wrap{flex-direction:column;gap:12px}
+  .hero-value-points{grid-template-columns:repeat(3,auto);justify-content:center;text-align:center}
+  .hero-feature-strip{bottom:18px;width:calc(100% - 32px)}
+  .hero-feature-card{min-height:68px;padding:13px;font-size:11.5px}
   #description{display:flex;flex-direction:column;gap:0;padding:70px 28px 80px}
   .desc-top{padding-bottom:0;transform:none !important;opacity:1 !important;align-self:stretch}
   .desc-img-wrap{margin:28px 0 36px;transform:none !important;opacity:1 !important}
@@ -458,6 +498,9 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
   .desc-img-wrap::before{inset:-10px 10px 10px -10px}
   .desc-bottom{transform:none !important;opacity:1 !important}
   #stats{padding:60px 28px}
+  #value-note{padding:26px 28px}
+  #renovation{padding:80px 28px}
+  .renovation-inner{grid-template-columns:1fr;gap:36px}
   #trust{padding:52px 28px}
   .trust-grid{grid-template-columns:repeat(2,1fr)}
   #gallery{padding:60px 28px}
@@ -485,6 +528,17 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
   .provfrei-right{font-size:14px}
 }
 @media(max-width:640px){
+  #hero{display:block;min-height:auto}
+  .hero-content{padding:92px 20px 20px}
+  .hero-title{font-size:clamp(28px,7.7vw,34px);line-height:1.08;margin-bottom:16px}
+  .hero-sub{font-size:14px;line-height:1.55}
+  .hero-subline{font-size:11px;letter-spacing:.04em}
+  .hero-value-points{grid-template-columns:1fr;justify-items:center}
+  .hero-feature-strip{position:relative;left:auto;bottom:auto;transform:none;grid-template-columns:repeat(2,1fr);gap:8px;width:calc(100% - 24px);margin:0 auto 14px}
+  .hero-feature-card{min-height:64px;padding:11px 10px;font-size:10.5px;gap:9px}
+  .hero-feature-card svg{width:28px;height:28px;padding:6px}
+  .renovation-grid{grid-template-columns:1fr}
+  .value-note-inner{align-items:flex-start;text-align:left;font-size:15px}
   .contact-form{grid-template-columns:1fr}
   .fg.fw,.form-btn{grid-column:span 1}
   .gal-grid{grid-template-columns:1fr;grid-auto-rows:240px}
@@ -499,14 +553,34 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
   .trust-check-item:nth-child(1){border-top:1px solid rgba(201,160,112,.08)}
   .trust-check-item:nth-child(2){border-top:none}
   .desc-img-wrap img{height:56vw;min-height:200px}
-  #fcta{bottom:24px;right:24px}
+  #fcta{bottom:16px;right:16px}
+  .fcta-tooltip{display:none}
+  .fcta-btn{width:52px;height:52px}
+  .fcta-btn-email{display:flex}
   .nbhd-quote{flex-direction:column;gap:16px;padding:28px}
   .prop-strip-inner{grid-template-columns:1fr}
   .ps-item{border-right:none;border-bottom:1px solid var(--gborder)}
   .ps-item:nth-child(2),.ps-item:nth-child(4){border-left:1px solid var(--gborder);padding-left:24px}
-  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  #stats{padding:42px 12px 92px}
+  .stats-grid{grid-template-columns:repeat(2,1fr);border:none}
+  .stat-item{min-height:150px;padding:24px 10px;border:none;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .stat-item:not(:last-child)::after{display:none}
+  .stat-item:nth-child(odd)::after{content:'';display:block;position:absolute;right:0;top:20%;height:60%;width:1px;background:var(--gborder)}
+  .stat-icon{width:30px;height:30px;margin-bottom:14px}
+  .stat-icon svg{width:16px;height:16px}
+  .stat-num{font-size:clamp(30px,8.5vw,38px);min-height:38px}
+  .stat-item:last-child .stat-num{font-size:clamp(32px,8.8vw,40px)}
+  .stat-lbl{font-size:9px;letter-spacing:.2em;line-height:1.45;margin-top:10px;max-width:120px}
 }
 @media(max-width:480px){
+  #hero{min-height:auto}
+  .hero-content{padding:88px 18px 18px}
+  .hero-badge{padding:8px 14px;margin-bottom:16px}
+  .hero-savings{display:flex;width:calc(100% + 36px);margin-left:-18px;margin-right:-18px;justify-content:center;border-left:none;border-right:none;border-radius:0}
+  .hero-feature-strip{width:calc(100% - 24px);grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  .hero-feature-card{flex-direction:column;justify-content:center;text-align:center;min-height:68px;padding:10px 6px;font-size:8.8px;line-height:1.25;gap:6px}
+  .hero-feature-card svg{width:25px;height:25px;padding:5px}
+  .btn-gold,.btn-wa{width:100%;max-width:330px;justify-content:center;text-align:center;padding:16px 18px;letter-spacing:.12em}
   #provfrei{padding:14px 16px}
   .provfrei-badge{font-size:11px;letter-spacing:.15em}
   .provfrei-dot{display:none}
@@ -517,6 +591,41 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
   .hero-savings{font-size:11px;padding:9px 16px;letter-spacing:.04em}
   .hero-sub{font-size:13px;letter-spacing:.01em}
   .hero-price small{font-size:11px;letter-spacing:.12em}
+  #stats{padding:36px 12px 88px}
+  .stat-item{min-height:132px;padding:20px 8px}
+  .stat-num{font-size:clamp(28px,8.2vw,34px)}
+  .stat-item:last-child .stat-num{font-size:clamp(30px,8.4vw,36px)}
+  .stat-lbl{font-size:8px;letter-spacing:.18em}
+  .fcta-btn{width:48px;height:48px}
+}
+@media(max-width:400px){
+  .hero-content{padding:76px 18px 14px}
+  .hero-badge{padding:7px 12px;margin-bottom:12px}
+  .hero-title{font-size:clamp(25px,7.1vw,31px);line-height:1.06;margin-bottom:12px}
+  .hero-sub{font-size:12.5px;line-height:1.48;margin-bottom:10px}
+  .hero-subline{font-size:10px;margin-bottom:8px}
+  .hero-savings{margin-bottom:12px}
+  .hero-price-wrap{margin-bottom:18px}
+  .hero-value-points{gap:5px}
+  .hero-acts{gap:10px}
+  .btn-gold,.btn-wa{padding:14px 14px}
+  .hero-feature-strip{gap:6px}
+  .hero-feature-card{min-height:56px;padding:8px 5px;font-size:8.4px;gap:5px}
+  .hero-feature-card svg{width:23px;height:23px;padding:5px}
+}
+@media(max-width:370px){
+  .hero-content{padding-top:64px}
+  .hero-badge{padding:6px 10px;margin-bottom:10px}
+  .hero-badge span{font-size:8px;letter-spacing:.12em}
+  .hero-title{font-size:clamp(23px,6.8vw,28px);margin-bottom:10px}
+  .hero-sub{font-size:12px;line-height:1.4}
+  .hero-subline{font-size:9px;margin-bottom:6px}
+  .hero-price-wrap{margin-bottom:12px}
+  .hero-acts{gap:8px}
+  .btn-gold,.btn-wa{padding:12px 12px}
+  .hero-feature-strip{gap:5px}
+  .hero-feature-card{min-height:48px;padding:7px 4px;font-size:7.7px;gap:4px}
+  .hero-feature-card svg{width:21px;height:21px;padding:4px}
 }
 </style>
 </head>
@@ -588,25 +697,38 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
       <span>PROVISIONSFREI &nbsp;·&nbsp; DIREKT VOM EIGENTÜMER</span>
     </div>
     <h1 class="hero-title">
-      <span class="line"><span class="word">PROVISIONSFREI</span></span>
-      <span class="line"><span class="word acc">Familienhaus</span></span>
-      <span class="line"><span class="word">nahe Nürnberg</span></span>
+      <span class="line"><span class="word">Ankommen, wohlfühlen,</span></span>
+      <span class="line"><span class="word acc">zuhause sein.</span></span>
+      <span class="line"><span class="word loc">In Oberasbach bei Nürnberg.</span></span>
     </h1>
-    <p class="hero-sub" id="hsub">Moderne Doppelhaushälfte in Oberasbach mit Garten, hochwertiger Ausstattung und schneller Anbindung nach Nürnberg / Fürth.</p>
-    <div class="hero-savings" id="hsavings">
-      ✦&nbsp; Ersparnis ca. 20.000 € – 25.000 € gegenüber Maklerverkauf
+    <div class="hero-sub" id="hsub">
+      <div class="hero-subline">Kernsanierte Doppelhaushälfte · 152 m² · Garten · Garage · sofort bezugsbereit</div>
+      <p>Kein Renovierungsstress, kein Makler, keine Wartezeit – einfach einziehen und leben.</p>
     </div>
-    <div class="hero-price" id="hprice">
-      <small>Kaufpreis · Keine Käuferprovision</small>
-      695.000 €
+    <div class="hero-savings" id="hsavings">
+      ✦&nbsp; Keine Käuferprovision – Ersparnis von ca. 25.000 € bis 30.000 €
+    </div>
+    <div class="hero-price-wrap" id="hprice">
+      <div class="hero-price">
+        <small>Kaufpreis · 0 € Käuferprovision · Direkt vom Eigentümer</small>
+        695.000 €
+      </div>
     </div>
     <div class="hero-acts" id="hacts">
-      <a href="#contact" class="btn-gold">Besichtigung sichern</a>
-      <a href="https://wa.me/4915259188803?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20die%20Doppelhaush%C3%A4lfte%20in%20Oberasbach." target="_blank" rel="noopener noreferrer" class="btn-wa">
+      <a href="#contact" class="btn-gold">Besichtigung anfragen</a>
+      <a href="https://wa.me/4915259188803?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20die%20Doppelhaush%C3%A4lfte%20in%20Oberasbach." target="_blank" rel="noopener noreferrer" class="btn-wa" onclick="gtag('event','conversion',{'send_to':'AW-18143585810/ROacCLCigakcEJLMxMtD'})">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Per WhatsApp anfragen
+        Direkt per WhatsApp anfragen
       </a>
     </div>
+  </div>
+  <div class="hero-feature-strip" aria-label="Wichtigste Vorteile">
+    <div class="hero-feature-card"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Umfangreich kernsaniert</span></div>
+    <div class="hero-feature-card"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg><span>Einzelgarage inklusive</span></div>
+    <div class="hero-feature-card"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.8 1-6.1-4.4-4.3 6.1-.9z"/></svg><span>Hochwertige Ausstattung</span></div>
+    <div class="hero-feature-card"><svg viewBox="0 0 24 24"><path d="M12 22V12"/><path d="M5 12c0-4 3-7 7-7s7 3 7 7"/><path d="M4 18c5-2 11-2 16 0"/></svg><span>Garten &amp; moderne Raumaufteilung</span></div>
+    <div class="hero-feature-card"><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg><span>Sofort bezugsbereit</span></div>
+    <div class="hero-feature-card"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-8 0v2"/><circle cx="12" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg><span>Direkte Abwicklung</span></div>
   </div>
   <div class="hero-scroll" id="hscroll" onclick="goto('#stats')">
     <span>Scrollen</span>
@@ -624,9 +746,9 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
       <span class="mt-sep">◆</span>
       <div class="mt-item"><span>Zimmer</span><strong>4 Zimmer</strong></div>
       <span class="mt-sep">◆</span>
-      <div class="mt-item"><span>Bäder</span><strong>2 Bd. + Gäste-WC</strong></div>
+      <div class="mt-item"><span>Zustand</span><strong>Kernsaniert</strong></div>
       <span class="mt-sep">◆</span>
-      <div class="mt-item"><span>Etagen</span><strong>EG + OG + DG</strong></div>
+      <div class="mt-item"><span>Garage</span><strong>Einzelgarage</strong></div>
       <span class="mt-sep">◆</span>
       <div class="mt-item"><span>Provision</span><strong>0 €</strong></div>
       <span class="mt-sep">◆</span>
@@ -642,9 +764,9 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
       <span class="mt-sep">◆</span>
       <div class="mt-item"><span>Zimmer</span><strong>4 Zimmer</strong></div>
       <span class="mt-sep">◆</span>
-      <div class="mt-item"><span>Bäder</span><strong>2 Bd. + Gäste-WC</strong></div>
+      <div class="mt-item"><span>Zustand</span><strong>Kernsaniert</strong></div>
       <span class="mt-sep">◆</span>
-      <div class="mt-item"><span>Etagen</span><strong>EG + OG + DG</strong></div>
+      <div class="mt-item"><span>Garage</span><strong>Einzelgarage</strong></div>
       <span class="mt-sep">◆</span>
       <div class="mt-item"><span>Provision</span><strong>0 €</strong></div>
       <span class="mt-sep">◆</span>
@@ -666,7 +788,7 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
     </div>
     <div class="provfrei-sep"></div>
     <div class="provfrei-right">
-      Ersparnis ca. <strong>20.000 € – 25.000 €</strong> gegenüber Maklerverkauf
+      Keine Käuferprovision – Ersparnis von ca. <strong style="white-space:nowrap">25.000 € bis 30.000 €</strong>
     </div>
   </div>
 </div>
@@ -675,28 +797,62 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
 <section id="stats">
   <div class="stats-grid">
     <div class="stat-item">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11"/><path d="M8 20v-6h8v6"/></svg></div>
       <div class="stat-num"><span class="counter" data-t="152">0</span><span class="stat-sfx">m²</span></div>
       <div class="stat-lbl">Wohnfläche</div>
     </div>
     <div class="stat-item">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M6 16c2-8 10-8 12 0"/><path d="M12 4v16"/></svg></div>
       <div class="stat-num"><span class="counter" data-t="233">0</span><span class="stat-sfx">m²</span></div>
       <div class="stat-lbl">Grundstück</div>
     </div>
     <div class="stat-item">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg></div>
       <div class="stat-num"><span class="counter" data-t="4">0</span><span class="stat-sfx">Zi.</span></div>
       <div class="stat-lbl">Zimmer</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num"><span>2+1</span></div>
-      <div class="stat-lbl">Vollbäder + Gäste-WC</div>
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V10l7-6 7 6v11"/><path d="M9 21v-7h6v7"/></svg></div>
+      <div class="stat-num"><span>1</span></div>
+      <div class="stat-lbl">Einzelgarage inklusive</div>
     </div>
     <div class="stat-item stat-prov">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 8c-2-2-6-1-6 3s4 5 6 3"/><path d="M7 11h7"/><path d="M7 14h7"/></svg></div>
       <div class="stat-num"><span class="counter" data-t="0">0</span><span class="stat-sfx">€</span></div>
-      <div class="stat-lbl">Maklergebühr</div>
+      <div class="stat-lbl">Käuferprovision</div>
     </div>
     <div class="stat-item">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
       <div class="stat-num"><span>Sofort</span></div>
-      <div class="stat-lbl">Verfügbar</div>
+      <div class="stat-lbl">Bezugsfertig</div>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY / VALUE NOTE -->
+<section id="value-note">
+  <div class="value-note-inner">
+    <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+    <p><strong>Einziehen statt sanieren:</strong> kernsanierte Doppelhaushälfte in Oberasbach – fertig, bezugsbereit und ohne Käuferprovision. Kein Renovierungsstress, keine Baustelle, kein Makler.</p>
+  </div>
+</section>
+
+<!-- RENOVATION -->
+<section id="renovation">
+  <div class="renovation-inner">
+    <div class="renovation-copy">
+      <div class="sec-label">Umfangreiche Kernsanierung</div>
+      <h2 class="sec-title">Einziehen statt<br><em>sanieren</em></h2>
+      <p class="desc-txt">Dieses Haus nimmt Ihnen die größten Sorgen beim Immobilienkauf ab. Keine Baustelle nach dem Notartermin, keine unklaren Renovierungskosten, keine monatelange Planung mit Handwerkern. Die Doppelhaushälfte ist kernsaniert, hochwertig ausgestattet und sofort bezugsbereit.</p>
+      <p class="desc-txt">Sie kaufen kein Projekt, sondern ein fertiges Zuhause in Oberasbach bei Nürnberg. Mit 152 m² Wohnfläche, 4 Zimmern, Garten, Terrasse, Einzelgarage, Fußbodenheizung, moderner Küche und zwei Vollbädern ist alles vorbereitet für Familie, Alltag, Home Office und Zukunft.</p>
+    </div>
+    <div class="renovation-grid">
+      <div class="renovation-card"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h8l-1 8 11-14h-8z"/></svg><h3>Neue Elektrik</h3></div>
+      <div class="renovation-card"><svg viewBox="0 0 24 24"><path d="M4 10h16v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M8 10V6a4 4 0 0 1 8 0v4"/></svg><h3>Moderne Bäder</h3></div>
+      <div class="renovation-card"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 12h16"/><path d="M10 6v12"/></svg><h3>Hochwertige Bodenbeläge</h3></div>
+      <div class="renovation-card"><svg viewBox="0 0 24 24"><path d="M4 12h8a4 4 0 0 0 0-8H8"/><path d="M20 12h-8a4 4 0 0 0 0 8h4"/></svg><h3>Modernisierte Leitungen</h3></div>
+      <div class="renovation-card"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.8 1-6.1-4.4-4.3 6.1-.9z"/></svg><h3>Hochwertige Ausstattung</h3></div>
+      <div class="renovation-card"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><h3>Sofort bezugsfertig</h3></div>
     </div>
   </div>
 </section>
@@ -756,7 +912,7 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
 <section id="trust">
   <div class="trust-inner">
     <div class="sec-label" style="justify-content:center;margin-bottom:16px">Vertrauen &amp; Transparenz</div>
-    <h2 class="sec-title" style="margin-bottom:0">Warum Sie vertrauensvoll<br><em>anfragen können</em></h2>
+    <h2 class="sec-title" style="margin-bottom:0">Direkt kaufen, klar entscheiden,<br><em>Provision sparen</em></h2>
 
     <div class="trust-checklist">
       <div class="trust-check-item">
@@ -765,7 +921,7 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
       </div>
       <div class="trust-check-item">
         <span class="tck"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polyline points="2.5,9.5 7,14 15.5,4" stroke="#C9A070" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <strong>Keine Maklerprovision</strong>
+        <strong>Direkte Kommunikation</strong>
       </div>
       <div class="trust-check-item">
         <span class="tck"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polyline points="2.5,9.5 7,14 15.5,4" stroke="#C9A070" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -773,11 +929,15 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
       </div>
       <div class="trust-check-item">
         <span class="tck"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polyline points="2.5,9.5 7,14 15.5,4" stroke="#C9A070" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <strong>Keine Maklerprovision</strong>
+      </div>
+      <div class="trust-check-item">
+        <span class="tck"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polyline points="2.5,9.5 7,14 15.5,4" stroke="#C9A070" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <strong>Schnelle Besichtigung möglich</strong>
       </div>
     </div>
 
-    <p class="trust-sub">Kein Umweg, kein Risiko – direkter Kontakt zum Eigentümer, klarer Ablauf, keine versteckten Kosten.</p>
+    <p class="trust-sub">Der Verkauf erfolgt direkt vom Eigentümer. Das bedeutet kurze Wege, klare Kommunikation und keine Käuferprovision. Sie sparen ca. 25.000 € bis 30.000 € Maklerkosten und sprechen direkt mit den Personen, die das Objekt kennen. Besichtigungen sind kurzfristig möglich. Bei ernsthaftem Interesse erhalten Sie alle relevanten Informationen transparent und ohne Umwege.</p>
     <div class="trust-grid">
 
       <div class="trust-item">
@@ -785,7 +945,7 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
           <svg viewBox="0 0 48 48"><circle cx="24" cy="13" r="7"/><path d="M8 42 C8 31 15 25 24 25 C33 25 40 31 40 42"/></svg>
         </div>
         <h3 class="trust-title">Direkt vom Eigentümer</h3>
-        <p class="trust-text">Kein Makler, kein Zwischenhändler. Sie sprechen direkt mit den Eigentümern – persönlich, offen und auf Augenhöhe.</p>
+        <p class="trust-text">Kein Makler, kein Zwischenhändler. Sie sprechen direkt mit den Eigentümern – persönlich, offen und ohne Informationsverlust.</p>
         <span class="trust-num">01</span>
       </div>
 
@@ -794,7 +954,7 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
           <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M31 17 C28 13 21 12 17 16 C13 20 13 27 17 30 C21 33 28 32 31 28"/><line x1="12" y1="22" x2="28" y2="22"/><line x1="12" y1="27" x2="28" y2="27"/></svg>
         </div>
         <h3 class="trust-title">Keine Maklerprovision</h3>
-        <p class="trust-text">0 € Käuferprovision. Gegenüber einem Maklerverkauf sparen Sie bis zu 25.000 € – transparent und ohne Überraschungen.</p>
+        <p class="trust-text">0 € Käuferprovision. Sie sparen ca. 25.000 € bis 30.000 € und kaufen provisionsfrei in Oberasbach bei Nürnberg – transparent und ohne Überraschungen.</p>
         <span class="trust-num">02</span>
       </div>
 
@@ -848,30 +1008,30 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
 <section id="description">
   <div class="desc-top" id="dcontent">
     <div class="sec-label">Das Objekt</div>
-    <h2 class="sec-title">Ideal für Familien,<br><em>Paare & Home-Office</em></h2>
+    <h2 class="sec-title">Ein hochwertig fertiges<br><em>Zuhause ohne Stress</em></h2>
   </div>
   <div class="desc-img-wrap" id="dimg">
     <div class="img-accent"></div>
-    <img src="https://pub-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/images/description-image.jpg" alt="Innenansicht der Doppelhaushälfte Oberasbach" loading="lazy">
+    <img src="assets/images/description-image.jpg" alt="Innenansicht der Doppelhaushälfte in Oberasbach" loading="lazy">
   </div>
   <div class="desc-bottom" id="dbottom">
-    <p class="desc-txt">Diese modernisierte Doppelhaushälfte in Oberasbach bietet auf 152 m² Wohnfläche und 233 m² Grundstück ein durchdachtes Raumkonzept mit zeitlosem Charakter – ideal für Familien oder Paare, die mehr wollen.</p>
-    <p class="desc-txt">Vollständig saniert und sofort bezugsfrei: Fußbodenheizung, Designerküche mit Markengeräten, stimmungsvolles Dachgeschoss mit Balken – alles fertig, nichts nachzurüsten.</p>
-    <p class="desc-txt"><strong style="color:var(--text)">Kein Makler. Keine Provision. Direkt vom Eigentümer.</strong> Transparent, persönlich, ohne versteckte Kosten – und schneller Abschluss möglich.</p>
+    <p class="desc-txt">Diese kernsanierte Doppelhaushälfte in Oberasbach bietet auf 152 m² Wohnfläche und 233 m² Grundstück ein modernes, durchdachtes Raumkonzept – ideal für Familien, Paare und Home-Office.</p>
+    <p class="desc-txt">Sie kaufen kein Projekt, sondern ein fertiges Zuhause: hochwertige Ausstattung, moderne Bäder, Garten, eigene Einzelgarage und ein Zustand, der sofortiges Einziehen möglich macht.</p>
+    <p class="desc-txt"><strong style="color:var(--text)">Direkt vom Eigentümer. Keine Käuferprovision. Keine Renovierungskosten.</strong> Das ist ein kernsaniertes Haus in Oberasbach bei Nürnberg mit klarer Abwicklung und ohne unnötige Umwege.</p>
     <div class="feat-list">
       <div class="feat-item">Fußbodenheizung in allen Etagen</div>
       <div class="feat-item">Designerküche mit Markengeräten</div>
       <div class="feat-item">2 Vollbäder zzgl. Gäste-WC</div>
       <div class="feat-item">Dachgeschoss mit Balken</div>
       <div class="feat-item">Terrasse &amp; Privatgarten</div>
-      <div class="feat-item">Garage &amp; Stellplatz</div>
+      <div class="feat-item">Inklusive eigener Einzelgarage</div>
       <div class="feat-item">Keine Maklerprovision – 0 €</div>
       <div class="feat-item">Direkt vom Eigentümer</div>
-      <div class="feat-item">Sofort bezugsfrei</div>
-      <div class="feat-item">Ruhige Lage, 15 min. nach Fürth</div>
+      <div class="feat-item">Sofort bezugsbereit</div>
+      <div class="feat-item">Ruhige Lage mit schneller Anbindung</div>
     </div>
     <div class="gold-line"></div>
-    <a href="#contact" class="btn-gold">Jetzt Besichtigung vereinbaren</a>
+    <a href="#contact" class="btn-gold">Besichtigung anfragen</a>
   </div>
 </section>
 
@@ -879,9 +1039,9 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
 <div id="prop-strip">
   <div class="prop-strip-inner">
     <div class="ps-item"><span class="ps-key">Objektart</span><span class="ps-val">Doppelhaushälfte</span></div>
-    <div class="ps-item"><span class="ps-key">Zustand</span><span class="ps-val">Vollsaniert</span></div>
+    <div class="ps-item"><span class="ps-key">Zustand</span><span class="ps-val">Kernsaniert</span></div>
     <div class="ps-item"><span class="ps-key">Heizung</span><span class="ps-val">Fußbodenheizung</span></div>
-    <div class="ps-item"><span class="ps-key">Etagen</span><span class="ps-val">EG + OG + DG</span></div>
+    <div class="ps-item"><span class="ps-key">Garage</span><span class="ps-val">Einzelgarage inkl.</span></div>
     <div class="ps-item"><span class="ps-key">Provision</span><span class="ps-val">0 € – Provisionsfrei</span></div>
   </div>
 </div>
@@ -913,8 +1073,8 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
       <div class="amen-card">
         <span class="amen-num">04</span>
         <div class="amen-icon"><svg viewBox="0 0 48 48"><path d="M8 30 L8 20 C8 17 10 14 14 14 L16 14"/><ellipse cx="26" cy="30" rx="18" ry="12"/><line x1="8" y1="44" x2="8" y2="40"/><line x1="44" y1="44" x2="44" y2="40"/><path d="M16 14 C16 10 20 8 24 8 C28 8 30 10 30 14"/></svg></div>
-        <h3 class="amen-title">3 Vollbäder</h3>
-        <p class="amen-desc">Zwei vollständig ausgestattete Vollbäder mit ebenerdiger Regendusche und hochwertigen Armaturen – plus separates Gäste-WC (zzgl.). Großformatige Fliesen im zeitlosen Spa-Design.</p>
+        <h3 class="amen-title">Moderne Bäder</h3>
+        <p class="amen-desc">Zwei vollständig ausgestattete Vollbäder mit ebenerdiger Regendusche und hochwertigen Armaturen – plus separates Gäste-WC. Großformatige Fliesen im zeitlosen Spa-Design.</p>
       </div>
       <div class="amen-card">
         <span class="amen-num">05</span>
@@ -925,8 +1085,8 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
       <div class="amen-card">
         <span class="amen-num">06</span>
         <div class="amen-icon"><svg viewBox="0 0 48 48"><rect x="4" y="20" width="40" height="22" rx="2"/><path d="M4 20 L24 6 L44 20"/><rect x="14" y="30" width="8" height="12"/><rect x="26" y="30" width="8" height="12"/><line x1="22" y1="30" x2="22" y2="42"/></svg></div>
-        <h3 class="amen-title">Garage &amp; Stellplatz</h3>
-        <p class="amen-desc">Abschließbare Garage plus zusätzlicher Stellplatz direkt am Haus – sicheres Parken für zwei Fahrzeuge, ideal für Familien oder Zweitwagen.</p>
+        <h3 class="amen-title">Inklusive eigener Einzelgarage</h3>
+        <p class="amen-desc">Die Doppelhaushälfte mit Garage bietet geschütztes Parken direkt am Haus – praktisch im Alltag, wertvoll bei jedem Wetter und ein klarer Vorteil in Oberasbach.</p>
       </div>
     </div>
   </div>
@@ -938,57 +1098,57 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
     <div class="nbhd-header">
       <div>
         <div class="sec-label">Die Lage</div>
-        <h2 class="sec-title">Ruhige Lage –<br><em>direkt an Nürnberg</em></h2>
+        <h2 class="sec-title">Wohnen in Oberasbach<br><em>mit schneller Anbindung nach Nürnberg</em></h2>
       </div>
-      <p class="desc-txt" style="margin:0">Oberasbach verbindet ruhiges Familienleben mit hervorragender Infrastruktur – Bäcker, Schule und Naturschutzgebiet fußläufig, Nürnberg und Fürth in wenigen Minuten erreichbar.</p>
+      <p class="desc-txt" style="margin:0">Ruhige Wohnlage in Oberasbach, ideal für alle, die stadtnah wohnen und Nürnberg sowie Fürth schnell erreichen möchten.</p>
     </div>
     <div class="nbhd-cards">
       <div class="nbhd-card">
-        <span class="nbhd-icon">🌿</span>
-        <div class="nbhd-dist">Fußläufig</div>
-        <div class="nbhd-name">Natur &amp; Erholung</div>
+        <span class="nbhd-icon"><svg viewBox="0 0 24 24"><path d="M4 19c5-2 11-2 16 0"/><path d="M12 19V8"/><path d="M5 11c4 0 7-3 7-7 0 4 3 7 7 7"/></svg></span>
+        <div class="nbhd-dist">Ruhig</div>
+        <div class="nbhd-name">Wohnlage</div>
         <ul class="nbhd-items">
-          <li>Naturschutzgebiet direkt vor der Tür</li>
-          <li>Rad- und Wanderwege</li>
-          <li>Parks und Spielplätze</li>
+          <li>Garten und grünes Umfeld</li>
+          <li>Wohngefühl abseits der Hektik</li>
+          <li>Ideal für Familie und Home-Office</li>
         </ul>
       </div>
       <div class="nbhd-card">
-        <span class="nbhd-icon">🏪</span>
+        <span class="nbhd-icon"><svg viewBox="0 0 24 24"><path d="M4 10h16"/><path d="M5 10l2-5h10l2 5"/><path d="M6 10v10h12V10"/><path d="M9 20v-6h6v6"/></svg></span>
         <div class="nbhd-dist">Fußläufig</div>
-        <div class="nbhd-name">Nahversorgung</div>
+        <div class="nbhd-name">Einkaufsmöglichkeiten</div>
         <ul class="nbhd-items">
-          <li>Bäcker &amp; Supermarkt</li>
-          <li>Grundschule &amp; Kindergarten</li>
+          <li>Bäcker &amp; Supermärkte</li>
+          <li>Alltag schnell erledigt</li>
           <li>Ärzte, Apotheke &amp; Dienstleister</li>
         </ul>
       </div>
       <div class="nbhd-card">
-        <span class="nbhd-icon">🏙</span>
-        <div class="nbhd-dist">15 Min.</div>
-        <div class="nbhd-name">Fürth</div>
+        <span class="nbhd-icon"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M6 20V8l6-4 6 4v12"/><path d="M9 20v-6h6v6"/></svg></span>
+        <div class="nbhd-dist">Nah</div>
+        <div class="nbhd-name">Schulen</div>
         <ul class="nbhd-items">
-          <li>Direktverbindung per Bus</li>
-          <li>Shopping, Gastronomie, Kultur</li>
-          <li>Kliniken &amp; weiterführende Schulen</li>
+          <li>Grundschule &amp; Kindergarten erreichbar</li>
+          <li>Weiterführende Schulen in der Umgebung</li>
+          <li>Familienfreundliche Infrastruktur</li>
         </ul>
       </div>
       <div class="nbhd-card">
-        <span class="nbhd-icon">✈</span>
-        <div class="nbhd-dist">20 Min.</div>
-        <div class="nbhd-name">Nürnberg</div>
+        <span class="nbhd-icon"><svg viewBox="0 0 24 24"><path d="M6 17h12"/><path d="M8 17l-2 3"/><path d="M16 17l2 3"/><rect x="5" y="4" width="14" height="13" rx="2"/><path d="M8 8h8"/><path d="M8 12h8"/></svg></span>
+        <div class="nbhd-dist">Direkt</div>
+        <div class="nbhd-name">ÖPNV &amp; Fahrzeiten</div>
         <ul class="nbhd-items">
-          <li>Flughafen Nürnberg</li>
-          <li>A73 &amp; schnelle Autobahnanbindung</li>
-          <li>Hauptbahnhof &amp; ICE-Verbindungen</li>
+          <li>Schnell nach Nürnberg und Fürth</li>
+          <li>ÖPNV-Anbindung im Alltag</li>
+          <li>Gute Verbindung zu A73 &amp; Bahnhof</li>
         </ul>
       </div>
     </div>
     <div class="nbhd-quote" id="nbhd-quote">
       <div class="nbhd-q-mark">"</div>
       <div>
-        <p class="nbhd-q-text">Wir verkaufen unser liebevoll gestaltetes Zuhause direkt – ohne Makler, ohne Umwege. Als Käufer sparen Sie sich bis zu 25.000 € Provision und profitieren von einem transparenten Direktkauf.</p>
-        <span class="nbhd-q-attr">Die Eigentümer · Oberasbach</span>
+        <p class="nbhd-q-text">Dieses Haus ist fertig. Sie müssen nicht sanieren, nicht warten und keine Maklerprovision zahlen. Nur anschauen, entscheiden und einziehen.</p>
+        <span class="nbhd-q-attr">Privatverkauf · Oberasbach bei Nürnberg</span>
       </div>
     </div>
   </div>
@@ -999,7 +1159,7 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
   <div class="contact-inner">
     <div class="sec-label" style="justify-content:center;margin-bottom:20px">Direkter Kontakt</div>
     <h2 class="sec-title">Sprechen Sie direkt<br>mit den <em>Eigentümern</em></h2>
-    <p class="desc-txt">Kein Makler, kein Umweg. Kontaktieren Sie uns direkt per Telefon, WhatsApp oder E-Mail – schnell, unkompliziert und persönlich.</p>
+    <p class="desc-txt">Dieses Haus ist fertig. Sie müssen nicht sanieren, nicht warten und keine Maklerprovision zahlen. Nur anschauen, entscheiden und einziehen. Kontaktieren Sie uns direkt – kein Makler, kein Umweg, keine versteckten Kosten.</p>
     <div class="contact-cards">
 
       <!-- PHONE -->
@@ -1016,7 +1176,7 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
       </a>
 
       <!-- WHATSAPP -->
-      <a href="https://wa.me/4915259188803?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20die%20Doppelhaush%C3%A4lfte%20in%20Oberasbach." target="_blank" rel="noopener noreferrer" class="ccard ccard-wa">
+      <a href="https://wa.me/4915259188803?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20die%20Doppelhaush%C3%A4lfte%20in%20Oberasbach." target="_blank" rel="noopener noreferrer" class="ccard ccard-wa" onclick="gtag('event','conversion',{'send_to':'AW-18143585810/ROacCLCigakcEJLMxMtD'})">
         <div class="ccard-glow"></div>
         <div class="ccard-icon-wrap">
           <svg viewBox="0 0 24 24">
@@ -1025,7 +1185,7 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
         </div>
         <div class="ccard-label">WhatsApp</div>
         <div class="ccard-val">0152-59188803</div>
-        <div class="ccard-action">Nachricht senden</div>
+        <div class="ccard-action">Direkt per WhatsApp anfragen</div>
       </a>
 
       <!-- EMAIL -->
@@ -1043,7 +1203,7 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
       </a>
 
     </div>
-    <div class="contact-note">Jederzeit für Sie erreichbar &nbsp;·&nbsp; Direkt vom Eigentümer &nbsp;·&nbsp; Keine Maklergebühren</div>
+    <div class="contact-note">Schnelle Besichtigung möglich &nbsp;·&nbsp; Direkt vom Eigentümer &nbsp;·&nbsp; Keine Käuferprovision</div>
   </div>
 </section>
 
@@ -1066,7 +1226,7 @@ body::after{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;o
 <!-- FLOATING CTAs -->
 <div id="fcta">
   <div class="fcta-tooltip">Jetzt kontaktieren</div>
-  <a class="fcta-btn fcta-btn-wa" href="https://wa.me/4915259188803" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+  <a class="fcta-btn fcta-btn-wa" href="https://wa.me/4915259188803" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" onclick="gtag('event','conversion',{'send_to':'AW-18143585810/ROacCLCigakcEJLMxMtD'})">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
   </a>
   <button class="fcta-btn fcta-btn-email" onclick="goto('#contact')" aria-label="Kontaktformular">
@@ -1126,22 +1286,7 @@ window.addEventListener('load', () => {
 setTimeout(() => { fill.style.width='100%'; pct.textContent='100%'; pre.classList.add('done'); }, 4000);
 
 // ── CURSOR ─────────────────────────────────────────
-const dot = document.getElementById('cur-dot');
-const ring = document.getElementById('cur-ring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  dot.style.left = mx+'px'; dot.style.top = my+'px';
-});
-(function tick(){
-  rx += (mx-rx)*.12; ry += (my-ry)*.12;
-  ring.style.left = rx+'px'; ring.style.top = ry+'px';
-  requestAnimationFrame(tick);
-})();
-$$('a,button,.gal-item,.vid-item,.amen-card,.nbhd-card').forEach(el => {
-  el.addEventListener('mouseenter', () => { dot.style.width='14px'; dot.style.height='14px'; ring.style.width='58px'; ring.style.height='58px'; });
-  el.addEventListener('mouseleave', () => { dot.style.width='8px'; dot.style.height='8px'; ring.style.width='40px'; ring.style.height='40px'; });
-});
+// default browser cursor
 
 // ── SCROLL PROGRESS ────────────────────────────────
 const sp = document.getElementById('sprogress');
@@ -1153,6 +1298,7 @@ window.addEventListener('scroll', () => {
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 80); }, {passive:true});
 document.getElementById('nav-cta-btn').addEventListener('click', () => goto('#contact'));
+
 
 // ── MOBILE MENU ────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
@@ -1240,6 +1386,9 @@ animate('#hsavings', {opacity:[0,1], y:[20,0]}, {duration:.8, delay:1.80, easing
 animate('#hprice',   {opacity:[0,1], y:[20,0]}, {duration:.8, delay:2.05, easing:[.16,1,.3,1]});
 animate('#hacts',    {opacity:[0,1], y:[20,0]}, {duration:.8, delay:2.3,  easing:[.16,1,.3,1]});
 animate('#hscroll',  {opacity:[0,1]},            {duration:.8, delay:2.7});
+$$('.hero-feature-strip .hero-feature-card').forEach((el,i) => {
+  animate(el, {opacity:[0,1], y:[18,0]}, {duration:.6, delay:2.55+i*.1, easing:[.16,1,.3,1]});
+});
 
 // ── IN-VIEW ANIMATIONS ─────────────────────────────
 const eIn = [.16,1,.3,1];
@@ -1263,8 +1412,14 @@ $$('.vid-item').forEach((el,i) => {
   inView(el, () => animate(el, {opacity:[0,1],y:[40,0]}, {duration:.7, delay:i*.1, easing:eIn}), {margin:'-5% 0px'});
 });
 $$('.amen-card').forEach((el,i) => {
-  inView(el, () => animate(el, {opacity:[0,1],y:[30,0]}, {duration:.7, delay:(i%3)*.1, easing:eIn}), {margin:'-5% 0px'});
+  el.style.opacity='0'; el.style.transform='translateY(30px)';
+  inView(el, () => animate(el, {opacity:[0,1],y:[30,0]}, {duration:.7, delay:(i%2)*.12, easing:eIn}), {margin:'-5% 0px'});
 });
+$$('.renovation-card').forEach((el,i) => {
+  el.style.opacity='0'; el.style.transform='translateY(30px)';
+  inView(el, () => animate(el, {opacity:[0,1],y:[30,0]}, {duration:.7, delay:(i%2)*.12, easing:eIn}), {margin:'-5% 0px'});
+});
+inView('.renovation-copy', () => animate('.renovation-copy', {opacity:[0,1],x:[-30,0]}, {duration:.8, easing:eIn}), {margin:'-10% 0px'});
 $$('.nbhd-card').forEach((el,i) => {
   inView(el, () => animate(el, {opacity:[0,1],y:[30,0]}, {duration:.7, delay:i*.1, easing:eIn}), {margin:'-5% 0px'});
 });
@@ -1328,7 +1483,7 @@ $$('.gal-item').forEach(el => {
 const lb = document.getElementById('lb');
 const lbImg = document.getElementById('lb-img');
 const lbCounter = document.getElementById('lb-counter');
-const imgs = Array.from({length:10}, (_,i) => `https://-0ec5c420e3fb41d1852aced0e0f04c6d.r2.dev/images/gallery-${i+1}.jpg`);
+const imgs = Array.from(document.querySelectorAll('.gal-item img')).map(img => img.currentSrc || img.src);
 let ci = 0;
 
 function openLB(i) {
